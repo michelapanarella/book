@@ -13,7 +13,7 @@ proc freq data=books;
 tables language_code;
 run;
 
-/* seems the big languaes are english, french, german, and spanish - change this to the main languages
+/* seems the big languages are english, french, german, and spanish - change this to the main languages
 and label the rest as others. Also delete the numeric languages - likely typos*/
 
 data books_clean;
