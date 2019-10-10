@@ -137,11 +137,13 @@ proc fastclus data=books_stdize out=clust maxclusters=5 maxiter=100;
 var average_rating ratings_count text_reviews_count __num_pages;
 run;
 
+/* produces data that can be plotted; labels data bythe cluster class */
 proc candisc data=clust out=Can noprint;
    class Cluster;
    var average_rating ratings_count text_reviews_count __num_pages;
 run;
 
+/*plots the different clusters*/
 proc sgplot data=Can;
    scatter y=Can2 x=Can1 / group=cluster;
 run;
