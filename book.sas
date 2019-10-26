@@ -21,9 +21,7 @@ and label the rest as others. Also delete the numeric languages - likely typos*/
 
 data books_clean;
 set books;
-if language_code = "en-CA" then language_code = "eng";
-if language_code = "en-GB" then language_code = "eng";
-if language_code = "en-US" then language_code = "eng"; 
+if language_code in ("en-CA","en-GB", "en-US") then language_code = "eng"; 
 if language_code = 97806 then delete;
 if language_code = 97808 then delete;
 if language_code = 97815 then delete;
